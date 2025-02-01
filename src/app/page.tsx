@@ -21,7 +21,7 @@ export default function Home() {
               <TopTracks />
               <button
                 onClick={() => signOut()}
-                className="mt-8 px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors"
+                className="mt-8 px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors shadow-lg"
               >
                 Sign Out
               </button>
@@ -29,7 +29,7 @@ export default function Home() {
           ) : (
             <button
               onClick={() => signIn('spotify')}
-              className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors"
+              className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors shadow-lg"
             >
               Sign in with Spotify
             </button>
