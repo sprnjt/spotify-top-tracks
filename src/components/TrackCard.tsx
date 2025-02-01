@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SpotifyTrack } from '@/types/spotify';
 import { ExternalLink } from 'lucide-react';
 
@@ -9,9 +10,11 @@ interface TrackCardProps {
 export default function TrackCard({ track, rank }: TrackCardProps) {
   return (
     <div className="group relative bg-white rounded-lg shadow-sm overflow-hidden transition-transform duration-300 transform hover:scale-105">
-      <img 
+      <Image 
         src={track.album.images[0]?.url} 
         alt={track.album.name} 
+        width={300}
+        height={300}
         className="w-full h-auto object-cover"
       />
       <div className="p-4">

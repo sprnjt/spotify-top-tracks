@@ -4,7 +4,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import TopTracks from '@/components/TopTracks';
 
 export default function Home() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
