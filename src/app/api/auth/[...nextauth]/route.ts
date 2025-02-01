@@ -1,7 +1,7 @@
 import NextAuth, { AuthOptions } from 'next-auth';
 import SpotifyProvider from 'next-auth/providers/spotify';
-import { Session } from 'next-auth';
 
+// Extend the Session interface
 declare module 'next-auth' {
   interface Session {
     accessToken?: string;
