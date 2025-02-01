@@ -1,8 +1,9 @@
-import NextAuth, { AuthOptions, DefaultSession } from 'next-auth';
+import NextAuth, { AuthOptions } from 'next-auth';
 import SpotifyProvider from 'next-auth/providers/spotify';
+import { Session } from 'next-auth';
 
 declare module 'next-auth' {
-  interface Session extends DefaultSession {
+  interface Session {
     accessToken?: string;
   }
 }
@@ -37,5 +38,6 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 };
 
+// Export the NextAuth handler as the default export
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
