@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 Spotify Top Tracks Explorer
 
-## Getting Started
+A web application that visualizes your personal Spotify listening history and top tracks. Built with Next.js 14, Spotify Web API, and NextAuth.js.
 
-First, run the development server:
+[Live Demo](https://spotify-top-tracks-steel.vercel.app)
 
+![Spotify Top Tracks Screenshot](/api/placeholder/800/400)
+
+## ✨ Features
+
+- **Spotify Authentication**: Secure login with your Spotify account using NextAuth.js
+- **Top Tracks Analysis**: View your most played tracks across different time ranges
+- **Interactive UI**: Modern, responsive interface built with Tailwind CSS
+- **Real-time Data**: Direct integration with Spotify's Web API
+- **Personalized Experience**: See your actual listening habits and preferences
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Authentication**: NextAuth.js with Spotify Provider
+- **Styling**: Tailwind CSS
+- **API**: Spotify Web API
+- **Deployment**: Vercel
+- **State Management**: React Hooks
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ installed
+- Spotify Developer account
+- Spotify API credentials
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```plaintext
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+```
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/spotify-top-tracks.git
+cd spotify-top-tracks
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔑 Spotify API Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Create a new application
+3. Add `http://localhost:3000/api/auth/callback/spotify` to the Redirect URIs
+4. Copy the Client ID and Client Secret to your `.env.local` file
 
-## Learn More
+## 📦 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+spotify-top-tracks/
+├── app/
+│   ├── api/
+│   │   └── auth/
+│   ├── components/
+│   ├── lib/
+│   └── page.tsx
+├── public/
+├── styles/
+├── types/
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔒 Authentication Flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. User clicks "Login with Spotify"
+2. NextAuth.js handles OAuth flow with Spotify
+3. Access token stored securely in session
+4. Token used for subsequent Spotify API calls
 
-## Deploy on Vercel
+## 🎨 Features in Detail
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Time Range Selection**: Choose between short-term (4 weeks), medium-term (6 months), and long-term (all time) listening history
+- **Track Details**: View comprehensive information about each track including:
+  - Song title and artist
+  - Album artwork
+  - Popularity score
+  - Preview audio clips (where available)
+- **Responsive Design**: Optimized for both desktop and mobile devices
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 👏 Acknowledgments
+
+- Spotify Web API for providing the data
+- Next.js team for the amazing framework
+- NextAuth.js for simplified authentication
+- All contributors and users of the application
+
+## 📞 Support
+
+If you have any questions or run into issues, please open an issue in the GitHub repository.
