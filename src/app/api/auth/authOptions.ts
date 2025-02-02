@@ -13,6 +13,9 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
+  session: {
+    strategy: 'jwt',
+  },
   callbacks: {
     async jwt({ token, account }) {
       if (account) {
