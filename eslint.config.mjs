@@ -11,12 +11,15 @@ const compat = new FlatCompat({
 
 // Create the ESLint configuration using flat config format
 const eslintConfig = [
-  compat.extends("next/core-web-vitals"),
-  compat.extends("next/typescript"),
+  // Extend configurations
+  ...compat.extends("next/core-web-vitals"),
+  ...compat.extends("next/typescript"),
   {
     rules: {
-      "no-unused-vars": "off",
+      "no-unused-vars": "off", // Example rule
     },
+    // Specify the files to which these rules apply
+    files: ["*.js", "*.ts", "*.jsx", "*.tsx"],
   },
 ];
 
